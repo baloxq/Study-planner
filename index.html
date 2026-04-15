@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Planner MVP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Study Planner</h1>
+<p>Organize your academic life</p>
+</header>
+
+<nav>
+<a href="#dashboard">Dashboard</a>
+<a href="#tasks">Tasks</a>
+<a href="#media">Media</a>
+</nav>
+
+<div class="container">
+<aside>
+<h2>Controls</h2>
+<button onclick="changeColor()">Change Color</button>
+<button onclick="increaseText()">Text Size</button>
+<button onclick="toggleTasks()">Toggle Tasks</button>
+</aside>
+
+<main id="dashboard">
+
+<section id="tasks">
+<h2>Your Tasks</h2>
+<div class="task">Math Homework</div>
+<div class="task">Physics Lab</div>
+</section>
+
+<section>
+<h2>Add Task</h2>
+<form>
+<input type="text" placeholder="Task name">
+<input type="date">
+<input type="submit">
+</form>
+</section>
+
+<section id="media">
+<h2>Gallery</h2>
+<img src="https://picsum.photos/300/200?1">
+<img src="https://picsum.photos/300/200?2">
+<img src="https://picsum.photos/300/200?3">
+<img src="https://picsum.photos/300/200?4">
+<img src="https://picsum.photos/300/200?5">
+</section>
+
+<section>
+<h2>Videos</h2>
+<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+<iframe src="https://www.youtube.com/embed/1g6Z2q8R0d0"></iframe>
+</section>
+
+</main>
+</div>
+
+<footer>
+<p>© Study Planner</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
