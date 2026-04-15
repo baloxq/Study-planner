@@ -7,24 +7,9 @@ function logout() {
 }
 
 function showPage(pageId) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active-page"));
+    document.getElementById(pageId).classList.add("active-page");
 
-    // скрыть все страницы
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.display = "none";
-    });
-
-    // показать нужную страницу
-    document.getElementById(pageId).style.display = "block";
-
-    // убрать active у всех кнопок
-    document.querySelectorAll("aside li").forEach(li => {
-        li.classList.remove("active");
-    });
-
-    // НАЙТИ кнопку по pageId и активировать
-    document.querySelectorAll("aside li").forEach(li => {
-        if (li.getAttribute("onclick").includes(pageId)) {
-            li.classList.add("active");
-        }
-    });
+    document.querySelectorAll("aside li").forEach(li => li.classList.remove("active"));
+    event.target.classList.add("active");
 }
