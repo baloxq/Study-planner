@@ -1,0 +1,15 @@
+body{margin:0;font-family:Arial;background:#f4f6f9}
+.layout{display:flex}
+aside{width:220px;background:#1d1f2f;color:white;padding:20px}
+aside li{cursor:pointer;padding:10px}
+aside li.active{background:#4a6cf7}
+main{padding:20px;flex:1}
+.auth{display:flex;justify-content:center;align-items:center;height:100vh}
+.auth-card{background:white;padding:30px;border-radius:10px}
+.page{display:none}
+.active-page{display:block}
+.hidden{display:none}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr)}
+.day{background:white;margin:5px;padding:10px}
+.dark{background:#111;color:white}
+.large{font-size:20px}
