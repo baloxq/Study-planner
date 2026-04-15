@@ -14,5 +14,4 @@
 ## Tech
 HTML, CSS, JavaScript
 
-## Run
-Open index.html or use GitHub Pages
+
