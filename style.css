@@ -143,3 +143,41 @@ main {
     color: orange;
     font-weight: bold;
 }
+/* PAGES */
+.page {
+    display: none;
+}
+
+.active-page {
+    display: block;
+}
+
+/* CALENDAR */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calendar div {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.day {
+    height: 60px;
+}
+
+/* LOGOUT BUTTON */
+.logout {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
