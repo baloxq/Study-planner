@@ -1,0 +1,13 @@
+body{margin:0;font-family:Arial;background:#f4f6f9}
+.layout{display:flex;height:100vh}
+aside{width:220px;background:#0b0d1c;color:#fff;padding:20px}
+aside li{list-style:none;padding:10px;cursor:pointer}
+aside li.active{background:#1c1f3a}
+main{flex:1;padding:30px}
+.auth{display:flex;justify-content:center;align-items:center;height:100vh}
+.auth-card{background:#fff;padding:30px;border-radius:12px;text-align:center}
+.card{background:#fff;padding:20px;border-radius:10px}
+.day{background:#fff;height:60px;margin:5px;border-radius:8px}
+.page{display:none}
+.active-page{display:block}
+.hidden{display:none}
