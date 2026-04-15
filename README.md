@@ -1,4 +1,4 @@
-# Study Planner MVP (Final)
+# Study Planner 
 
 ## Pages
 - Login
