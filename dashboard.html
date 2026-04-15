@@ -28,12 +28,23 @@
 <main>
 
 <div id="dashboard" class="page active-page">
-    <h2>Welcome back, Student!</h2>
-    <h3>Upcoming Tasks</h3>
 
-    <div class="task high">Complete Math Assignment</div>
-    <div class="task medium">Read Biology Chapter</div>
-    <div class="task high">History Essay</div>
+    <h2>Welcome back, Student!</h2>
+    <p style="color:gray;">Here’s what you have on your plate today</p>
+
+    <div class="card-box">
+
+        <div class="card-header">
+            <h3>Upcoming Tasks</h3>
+            <button onclick="addTask()">+ Add Task</button>
+        </div>
+
+        <div id="taskList">
+            <!-- задачи появятся тут -->
+        </div>
+
+    </div>
+
 </div>
 
 <div id="tasks" class="page">
