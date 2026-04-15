@@ -8,14 +8,12 @@ function logout() {
 
 function showPage(pageId, element) {
 
-    // переключение страниц
     document.querySelectorAll(".page").forEach(p => {
         p.classList.remove("active-page");
     });
 
     document.getElementById(pageId).classList.add("active-page");
 
-    // активная кнопка в sidebar
     document.querySelectorAll("aside li").forEach(li => {
         li.classList.remove("active");
     });
