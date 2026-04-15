@@ -105,3 +105,89 @@ main {
 .red { background: #ffe5e5; color: red; }
 .yellow { background: #fff3cd; color: orange; }
 .blue { background: #e5edff; color: blue; }
+/* ===== DASHBOARD UI ===== */
+
+.subtitle {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.task-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-btn {
+    background: #0b0d1c;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* FORM */
+
+.task-form {
+    margin-top: 20px;
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-row div {
+    flex: 1;
+}
+
+.form-row input,
+.form-row select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.form-actions button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #0b0d1c;
+    color: white;
+}
+
+.form-actions .cancel {
+    background: #ddd;
+    color: black;
+}
+
+/* TASK LIST */
+
+.task-item {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f4f6f9;
+    border-radius: 8px;
+}
