@@ -1,0 +1,14 @@
+body {margin:0;font-family:Arial;background:#f4f6f9;}
+.auth {display:flex;justify-content:center;align-items:center;height:100vh;}
+.card {background:white;padding:30px;border-radius:15px;width:300px;text-align:center;box-shadow:0 10px 20px rgba(0,0,0,0.1);}
+.card input {width:100%;padding:10px;margin:10px 0;}
+.card button {width:100%;padding:10px;background:#1d1f2f;color:white;border:none;border-radius:5px;}
+.layout {display:flex;height:100vh;}
+aside {width:200px;background:#1d1f2f;color:white;padding:20px;}
+aside ul {list-style:none;padding:0;}
+aside li {padding:10px;margin:5px 0;}
+.active {background:#4a6cf7;border-radius:5px;}
+main {flex:1;padding:20px;}
+.task {background:white;padding:15px;margin:10px 0;border-radius:10px;}
+.high {border-left:5px solid red;}
+.medium {border-left:5px solid orange;}
