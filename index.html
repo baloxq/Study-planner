@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Planner – Login</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth">
+  <div class="auth-card">
+    <div class="logo" style="margin:0 auto 10px auto">📘</div>
+    <h1>Study Planner</h1>
+    <p>Welcome back! Sign in to continue</p>
+    <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+      <label>Email</label>
+      <input type="email" placeholder="you@example.com" required>
+      <label>Password</label>
+      <input type="password" placeholder="••••••••" required>
+      <button class="btn" type="submit">Login</button>
+    </form>
+    <p style="margin-top:12px">Don't have an account? <a href="register.html"><b>Register</b></a></p>
+  </div>
+</body>
+</html>
