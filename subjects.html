@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Planner – Subjects</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">📘</div><div><h2>Study Planner</h2><p>MVP frontend LAB3</p></div></div>
+    <nav class="menu">
+      <a href="dashboard.html"><span>Dashboard</span></a>
+      <a href="subjects.html" class="active"><span>Subjects</span></a>
+      <a href="tasks.html"><span>Tasks</span></a>
+      <a href="calendar.html"><span>Calendar</span></a>
+    </nav>
+    <section class="side-section">
+      <div class="profile-card" data-profile></div>
+      <div class="control-card">
+        <h3>Display settings</h3>
+        <div class="toggle-row"><label>Light / dark mode</label><input class="dark-toggle" type="checkbox"></div>
+        <div class="control-group"><label>Text size</label><input class="font-range" type="range" min="14" max="20" value="16"><span class="range-value">16px</span></div>
+      </div>
+    </section>
+    <div class="spacer"></div>
+    <div class="logout"><a href="index.html">↩ Logout</a></div>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <h1>Subjects</h1>
+      <p>This page presents the academic structure of the MVP, showing example courses, expected outcomes, and planning focus.</p>
+    </header>
+    <div class="content grid">
+      <section class="grid cols-2">
+        <article class="card">
+          <h3>Active semester subjects</h3>
+          <div class="subject-grid">
+            <article class="subject-card">
+              <h4>Mathematics</h4>
+              <p class="muted">Weekly problem-solving and homework uploads.</p>
+              <ul>
+                <li>Lecture notes review</li>
+                <li>Formula practice</li>
+                <li>Assignment deadlines</li>
+              </ul>
+            </article>
+            <article class="subject-card">
+              <h4>Biology</h4>
+              <p class="muted">Readings, lab summaries, and concept maps.</p>
+              <ul>
+                <li>Chapter summaries</li>
+                <li>Lab preparation</li>
+                <li>Quiz reminders</li>
+              </ul>
+            </article>
+            <article class="subject-card">
+              <h4>History</h4>
+              <p class="muted">Essay planning and source comparison.</p>
+              <ul>
+                <li>Essay draft schedule</li>
+                <li>Reading milestones</li>
+                <li>Seminar discussion topics</li>
+              </ul>
+            </article>
+            <article class="subject-card">
+              <h4>Physics</h4>
+              <p class="muted">Lab work, reports, and exam revision.</p>
+              <ul>
+                <li>Lab report uploads</li>
+                <li>Calculation practice</li>
+                <li>Experiment checklists</li>
+              </ul>
+            </article>
+          </div>
+        </article>
+        <aside class="card">
+          <h3>MVP content rationale</h3>
+          <p>The subject area helps the user understand that tasks are not isolated items. They belong to a course structure, which makes the planner more suitable for university life than a generic to-do app.</p>
+          <img src="assets/tasks-board.svg" alt="Subject and task relationship visual">
+        </aside>
+      </section>
+
+      <section class="card table-wrap">
+        <h3>Weekly planning table</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Main activity</th>
+              <th>Frequency</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Mathematics</td><td>Homework and exercises</td><td>2 times per week</td><td><span class="status-pill high">High</span></td></tr>
+            <tr><td>Biology</td><td>Reading and notes</td><td>Weekly</td><td><span class="status-pill medium">Medium</span></td></tr>
+            <tr><td>History</td><td>Essay preparation</td><td>Weekly</td><td><span class="status-pill high">High</span></td></tr>
+            <tr><td>Physics</td><td>Lab report and revision</td><td>Weekly</td><td><span class="status-pill low">Low</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
