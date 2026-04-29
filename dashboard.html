@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study Planner dashboard with responsive design, editable profile, visuals, videos, and JavaScript interactivity.">
+  <title>Study Planner – Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">📘</div>
+      <div>
+        <h2>Study Planner</h2>
+        <p>MVP frontend LAB3</p>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <a href="dashboard.html" class="active"><span>Dashboard</span></a>
+      <a href="subjects.html"><span>Subjects</span></a>
+      <a href="tasks.html"><span>Tasks</span></a>
+      <a href="calendar.html"><span>Calendar</span></a>
+    </nav>
+
+    <section class="side-section">
+      <div class="profile-card" data-profile></div>
+
+      <div class="control-card">
+        <h3>Quick controls</h3>
+        <div class="toggle-row">
+          <label for="darkToggle">Light / dark mode</label>
+          <input id="darkToggle" class="dark-toggle" type="checkbox">
+        </div>
+        <div class="control-group">
+          <label for="fontRange">Text size</label>
+          <input id="fontRange" class="font-range" type="range" min="14" max="20" value="16">
+          <span class="range-value">16px</span>
+        </div>
+        <div class="control-group" style="display:block">
+          <label for="accentSelect" style="display:block;margin-bottom:6px">Accent color</label>
+          <select id="accentSelect" class="accent-select input">
+            <option value="#4f46e5">Indigo</option>
+            <option value="#0ea5e9">Sky</option>
+            <option value="#16a34a">Green</option>
+            <option value="#f97316">Orange</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="tips-card">
+        <h3>Frontend checklist</h3>
+        <p class="muted">This page includes navigation, sections, forms, articles, images, videos, lists, a table, and interactive DOM updates without page reload.</p>
+      </div>
+    </section>
+
+    <div class="spacer"></div>
+    <div class="logout"><a href="index.html">↩ Logout</a></div>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <h1>Welcome back, Student!</h1>
+      <p>This graphical user interface demonstrates how the Study Planner MVP helps students organize subjects, assignments, deadlines, and progress in a clear responsive layout.</p>
+      <nav class="inpage-nav">
+        <a href="#overview">Overview</a>
+        <a href="#tasks-section">Tasks</a>
+        <a href="#visuals">Visuals</a>
+        <a href="#videos">Videos</a>
+      </nav>
+    </header>
+
+    <div class="content grid">
+      <section id="overview" class="card hero">
+        <article>
+          <h2>Project MVP overview</h2>
+          <p>The frontend is focused on the first usable version of the system: student login, task planning, subject overview, deadline visibility, progress monitoring, and basic personalization. It follows the same clean sidebar-based style from the starting files while expanding the content into a richer LAB3 submission.</p>
+          <p id="dynamicGreeting" data-index="0">Stay consistent and finish one important task first.</p>
+          <div class="form-actions">
+            <button class="btn" type="button" onclick="cycleGreeting()">Change guidance text</button>
+            <a class="btn secondary" href="tasks.html">Open tasks page</a>
+          </div>
+          <div class="kpi-row">
+            <div class="kpi"><div class="num" data-stat="total">0</div><div class="label">Total tasks</div></div>
+            <div class="kpi"><div class="num" data-stat="active">0</div><div class="label">Active tasks</div></div>
+            <div class="kpi"><div class="num" data-stat="done">0</div><div class="label">Completed</div></div>
+            <div class="kpi"><div class="num" data-stat="high">0</div><div class="label">High priority</div></div>
+          </div>
+        </article>
+        <figure>
+          <img src="hero-study.svg" alt="Illustration of the Study Planner dashboard concept">
+        </figure>
+      </section>
+
+      <section id="tasks-section" class="grid cols-2">
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3>Upcoming tasks</h3>
+              <p class="muted">Create, duplicate, delete, mark tasks complete, and search tasks from the SQLite database.</p>
+            </div>
+            <button class="btn" onclick="toggleForm()">+ Add task</button>
+          </div>
+
+          <div id="taskFormWrap" class="hidden">
+            <form class="form" onsubmit="addTask(event)">
+              <div class="full">
+                <label for="f_title">Task title</label>
+                <input id="f_title" class="input" placeholder="Enter task title" required>
+              </div>
+              <div>
+                <label for="f_subject">Subject</label>
+                <input id="f_subject" class="input" placeholder="Mathematics" required>
+              </div>
+              <div>
+                <label for="f_type">Task type</label>
+                <select id="f_type" class="input">
+                  <option>Homework</option>
+                  <option>Lecture Review</option>
+                  <option>Exam</option>
+                  <option>Lab</option>
+                  <option>Essay</option>
+                </select>
+              </div>
+              <div>
+                <label for="f_priority">Priority</label>
+                <select id="f_priority" class="input">
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                  <option value="low">Low</option>
+                </select>
+              </div>
+              <div>
+                <label for="f_date">Due date</label>
+                <input id="f_date" class="input" type="date" required>
+              </div>
+              <div class="full form-actions">
+                <button class="btn" type="submit">Save task</button>
+                <button type="button" class="btn secondary" onclick="toggleForm()">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="task-toolbar" style="margin-bottom:14px">
+            <div class="form-actions">
+              <button class="btn secondary" type="button" onclick="filterTasks('all')">All</button>
+              <button class="btn secondary" type="button" onclick="filterTasks('todo')">Active</button>
+              <button class="btn secondary" type="button" onclick="filterTasks('done')">Completed</button>
+            </div>
+            <form class="search-form" onsubmit="searchTasks(event)">
+              <input id="taskSearchDash" class="input" type="search" placeholder="Search task title" aria-label="Search task title">
+              <button class="btn" type="submit">Search</button>
+              <button class="btn secondary" type="button" onclick="clearTaskSearch()">Clear</button>
+            </form>
+          </div>
+          <div id="taskMessage" class="form-message" role="alert"></div>
+          <div id="taskList" data-role="tasks-list" data-filter="all"></div>
+        </article>
+
+        <aside class="card">
+          <h3>Why this MVP works</h3>
+          <p>The selected MVP functionality supports the core student journey: sign in, view study load, add tasks, manage deadlines, and track completion. It avoids unnecessary backend complexity in the prototype stage while still allowing realistic interaction.</p>
+          <ul>
+            <li>Academic-specific structure for subjects and deadlines</li>
+            <li>Simple responsive layout for desktop and mobile usage</li>
+            <li>Immediate DOM updates through JavaScript</li>
+            <li>Personalization through editable profile and theme controls</li>
+          </ul>
+          <div class="note">Interactive controls already implemented: profile editor, light/dark mode, font size slider, accent color switcher, greeting text changer, and task filters.</div>
+        </aside>
+      </section>
+
+      <section id="visuals" class="card">
+        <div class="card-header">
+          <div>
+            <h3>Interactive visual gallery</h3>
+            <p class="muted">At least 5 visual elements are included below. Click any card to change the explanatory text.</p>
+          </div>
+        </div>
+        <div class="gallery">
+          <figure class="visual-card active" data-visual="dashboard" onclick="showPreviewMessage('dashboard')">
+            <img src="hero-study.svg" alt="Study planner dashboard visual">
+            <figcaption>Dashboard screen</figcaption>
+          </figure>
+          <figure class="visual-card" data-visual="calendar" onclick="showPreviewMessage('calendar')">
+            <img src="calendar-visual.svg" alt="Calendar interface visual">
+            <figcaption>Calendar module</figcaption>
+          </figure>
+          <figure class="visual-card" data-visual="tasks" onclick="showPreviewMessage('tasks')">
+            <img src="tasks-board.svg" alt="Task board visual">
+            <figcaption>Task board</figcaption>
+          </figure>
+          <figure class="visual-card" data-visual="profile" onclick="showPreviewMessage('profile')">
+            <img src="profile-card.svg" alt="Profile editing visual">
+            <figcaption>Editable profile</figcaption>
+          </figure>
+          <figure class="visual-card" data-visual="analytics" onclick="showPreviewMessage('analytics')">
+            <img src="progress-chart.svg" alt="Progress chart visual">
+            <figcaption>Progress analytics</figcaption>
+          </figure>
+        </div>
+        <div id="previewMessage" class="preview-box" style="margin-top:16px"></div>
+      </section>
+
+      <section id="videos" class="card">
+        <h3>Video section</h3>
+        <p class="muted">Two embedded video clips help demonstrate the kind of productivity and study workflow context this system supports.</p>
+        <div class="video-grid">
+          <iframe src="https://www.youtube.com/embed/TjPFZaMe2yw" title="Productivity workflow video" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/IlU-zDU6aQ0" title="Time management video" allowfullscreen></iframe>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p>Study Planner LAB3 MVP • Frontend only • Responsive design with HTML, CSS, JavaScript, multimedia, and DOM/BOM interaction.</p>
+    </footer>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

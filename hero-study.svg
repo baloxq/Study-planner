@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" rx="24" fill="#eef2ff"/>
+  <circle cx="140" cy="90" r="44" fill="#c7d2fe"/>
+  <circle cx="670" cy="120" r="58" fill="#ddd6fe"/>
+  <rect x="95" y="140" width="610" height="250" rx="22" fill="#ffffff" stroke="#cbd5e1"/>
+  <rect x="130" y="180" width="220" height="150" rx="16" fill="#111827"/>
+  <rect x="380" y="180" width="130" height="20" rx="8" fill="#94a3b8"/>
+  <rect x="380" y="215" width="250" height="16" rx="8" fill="#cbd5e1"/>
+  <rect x="380" y="245" width="210" height="16" rx="8" fill="#cbd5e1"/>
+  <rect x="380" y="280" width="170" height="16" rx="8" fill="#cbd5e1"/>
+  <rect x="380" y="315" width="120" height="32" rx="12" fill="#4f46e5"/>
+  <text x="398" y="337" font-family="Arial, sans-serif" font-size="14" fill="white">Open planner</text>
+</svg>
