@@ -1,4 +1,18 @@
+const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
+const fs = require('fs');
 
-const sqlite3=require('sqlite3').verbose();
-const db=new sqlite3.Database('./data/database.sqlite');
-module.exports=db;
+// создаём папку data если нет
+const dataDir = path.join(__dirname, 'data');
+
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir);
+}
+
+// путь к БД
+const dbPath = path.join(dataDir, 'database.sqlite');
+
+// создаём БД автоматически
+const db = new sqlite3.Database(dbPath);
+
+module.exports = db;
