@@ -292,6 +292,7 @@ async function loadQuote() {
     // ZenQuotes doesn't allow direct browser requests (CORS), so we use
     // the free allorigins.win proxy to relay the response.
     const url = 'https://api.allorigins.win/raw?url=' +
+      encodeURIComponent('https://zenquotes.io/api/random');
     const res = await fetch(url);
     const data = await res.json(); // returns [{ q, a }]
     const { q, a } = data[0];
